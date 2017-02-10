@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress TI">
+
+	<description>Thoughts and Ideas WordPress Coding Standards.</description>
+
+	<config name="testVersion" value="5.2-99.0" />
+	<config name="extensions" value="php" />
+
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+	<!-- Include the WordPress ruleset, with exclusions. -->
+	<rule ref="WordPress">
+	</rule>
+
+	<!-- Include sniffs for PHP cross-version compatibility. -->
+	<rule ref="PHPCompatibility">
+	</rule>
+
+	<!-- Exclude the 'empty' index files from some documentation checks -->
+	<rule ref="Squiz.Commenting.FileComment">
+		<exclude-pattern>*/index.php</exclude-pattern>
+	</rule>
+	<rule ref="Squiz.Commenting.InlineComment.NoSpaceBefore">
+		<exclude-pattern>*/index.php</exclude-pattern>
+	</rule>
+
+</ruleset>
