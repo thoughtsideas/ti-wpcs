@@ -4,8 +4,55 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ef013e62326f2765f10aa41cda326698",
+    "hash": "8f9720e5363173ea7d52348d2668b2d3",
     "packages": [
+        {
+            "name": "frenck/php-compatibility",
+            "version": "7.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/frenck/PHPCompatibility.git",
+                "reference": "6329d2c90540eee6a21100a918900762f702f580"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/frenck/PHPCompatibility/zipball/6329d2c90540eee6a21100a918900762f702f580",
+                "reference": "6329d2c90540eee6a21100a918900762f702f580",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.1.2",
+                "squizlabs/php_codesniffer": "~2.0"
+            },
+            "require-dev": {
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "psr-4": {
+                    "PHPCompatibility\\": "PHPCompatibility/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Wim Godden",
+                    "role": "lead"
+                }
+            ],
+            "description": "This is a set of sniffs for PHP_CodeSniffer that checks for PHP version compatibility, composer compatible.",
+            "homepage": "http://github.com/frenck/PHPCompatibility",
+            "keywords": [
+                "compatibility",
+                "phpcs",
+                "standards"
+            ],
+            "time": "2016-12-14 01:00:04"
+        },
         {
             "name": "squizlabs/php_codesniffer",
             "version": "2.8.0",
