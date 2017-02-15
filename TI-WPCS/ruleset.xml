@@ -5,6 +5,7 @@
 
 	<config name="testVersion" value="5.2-99.0" />
 
+	<!-- Exclude source code we do not control. -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 
