@@ -8,6 +8,10 @@
 
 	<description>Thoughts and Ideas WordPress Mess Detector.</description>
 
+	<!-- Exclude source code we do not control. -->
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	
 	<rule ref="rulesets/cleancode.xml/BooleanArgumentFlag" />
 	<rule ref="rulesets/cleancode.xml/ElseExpression" />
 	<rule ref="rulesets/cleancode.xml/StaticAccess" />
