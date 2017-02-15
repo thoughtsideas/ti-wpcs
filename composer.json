@@ -4,6 +4,7 @@
   "keywords": [
     "standards",
     "phpcs",
+    "phpmd",
     "wordpress"
   ],
   "license": "",
@@ -18,6 +19,7 @@
   },
   "require": {
     "squizlabs/php_codesniffer": "~2.8.0",
+    "phpmd/phpmd" : "~2.6.0",
     "wp-coding-standards/wpcs": "~0.10.0",
     "frenck/php-compatibility": "~7.1.0"
   },
