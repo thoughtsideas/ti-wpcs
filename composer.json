@@ -25,7 +25,8 @@
   },
   "scripts": {
     "config-set": [
-      "\"vendor/bin/phpcs\" --config-set installed_paths ../../..,../../../vendor/wp-coding-standards/wpcs,../../../vendor/frenck/php-compatibility"
+      "\"vendor/bin/phpcs\" --config-set installed_paths ../../..,../../../vendor/wp-coding-standards/wpcs,../../../vendor/frenck/php-compatibility",
+      "\"vendor/bin/phpcs\" --config-set default_standard TI-WPCS"
     ],
     "post-install-cmd": "composer config-set",
     "post-update-cmd": "composer config-set"
