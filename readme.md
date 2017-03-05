@@ -9,7 +9,7 @@ Thoughts & Ideas WordPress Coding Standards (TI-WPCS) is a project for testing c
 To include these standards as part of a project. Require this repository as a development dependancy:
 
 ```
-composer require thoughtsideas/ti-wpcs:dev-master -dev-master
+composer require --dev thoughtsideas/ti-wpcs
 ```
 
 Note: Your project will need to run the configuration scripts to setup these coding standards.
