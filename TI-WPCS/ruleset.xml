@@ -3,7 +3,7 @@
 
 	<description>Thoughts and Ideas WordPress Coding Standards.</description>
 
-	<config name="testVersion" value="5.2-99.0" />
+	<config name="testVersion" value="5.6-99.0" />
 
 	<!-- Exclude source code we do not control. -->
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
@@ -11,7 +11,7 @@
 
 	<!-- Only test PHP files. -->
 	<arg name="extensions" value="php" />
-	
+
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
 	</rule>
