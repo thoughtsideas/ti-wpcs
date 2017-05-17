@@ -7,7 +7,7 @@
     "phpmd",
     "wordpress"
   ],
-  "license": "",
+  "license": "MIT",
   "authors": [
     {
       "name": "Thoughts & Ideas",
