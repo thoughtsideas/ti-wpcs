@@ -42,7 +42,7 @@ The fixer and tests can be run from the command line:
 ./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/ti-wpmd/ruleset.xml
 ```
 
-## Automatically run tests before every Git commit.
+### Automatically run tests before every Git commit.
 
 *Thoughts & Ideas recommend a pre-commit Git Hook.*
 
