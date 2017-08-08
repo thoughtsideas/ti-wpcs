@@ -1,6 +1,7 @@
 {
   "name": "thoughtsideas/ti-wpcs",
   "description": "PHP CodeSniffer rules for Thoughts & Ideas WordPress projects",
+  "type": "phpcodesniffer-standard",
   "keywords": [
     "standards",
     "phpcs",
