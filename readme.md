@@ -20,19 +20,6 @@ as a development dependancy:
 ```
 composer require --dev thoughtsideas/ti-wpcs
 ```
-Your project will need to run the configuration scripts to setup these
-coding standards.
-Add our config scripts to your composer `"scripts":{ }` field.
-This will set our TI-WPCS as the default standard for this project.
-
-```
-"config-ti-wpcs": [
-	"\"vendor/bin/phpcs\" --config-set installed_paths ../../../vendor/wp-coding-standards/wpcs,../../../vendor/frenck/php-compatibility,../../../vendor/thoughtsideas/ti-wpcs",
-		"\"vendor/bin/phpcs\" --config-set default_standard TI-WPCS"
-],
-"post-install-cmd": "composer config-ti-wpcs",
-"post-update-cmd": "composer config-ti-wpcs"
-```
 
 The fixer and tests can be run from the command line:
 
