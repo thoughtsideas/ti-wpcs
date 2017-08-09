@@ -50,16 +50,23 @@ Add the pre-commit hook to our new file:
 git stash -q --keep-index
 
 # Run QA script.
-./vendor/bin/phpcbf ./
-./vendor/bin/phpcs ./
-./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/ti-wpmd/ruleset.xml
-QA=$?
+echo "Running WordPress PHP Coding Standards test"
+composer run test-phpcbf
+composer run test-phpcs
+# PHPCS Results (bool)
+QA_PHPCS=$?
+
+echo "Running WordPress PHP Mess Detector test"
+composer run test-phpmd
+# PHPMD Results (bool)
+QA_PHPMD=$?
 
 # Apply un-staged changes.
 git stash pop -q
 
 # Get our test QA results.
-[ $QA -ne 0 ] && exit 1
+[ $QA_PHPCS -ne 0 ] && exit 1
+[ $QA_PHPMD -ne 0 ] && exit 1
 
 # If test pass exit successfully.
 exit 0
