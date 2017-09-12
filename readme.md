@@ -91,10 +91,15 @@ composer run test-phpcpd
 # PHPCPD Results (bool)
 QA_PHPCPD=$?
 
-echo "Running WordPress PHP Security checker test"
+echo "Running WordPress PHP Security Checker test"
 composer run test-phpsc
 # PHPSC Results (bool)
 QA_PHPSC=$?
+
+echo "Running WordPress PHP Magic Number Detector test"
+composer run test-phpmnd
+# PHPMND Results (bool)
+QA_PHPMND=$?
 
 # Apply un-staged changes.
 git stash pop -q
@@ -104,6 +109,7 @@ git stash pop -q
 [ $QA_PHPMD -ne 0 ] && exit 1
 [ $QA_PHPCPD -ne 0 ] && exit 1
 [ $QA_PHPSC -ne 0 ] && exit 1
+[ $QA_PHPMND -ne 0 ] && exit 1
 
 # If test pass exit successfully.
 exit 0
