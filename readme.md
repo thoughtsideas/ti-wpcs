@@ -17,16 +17,34 @@ their reliability in production.
 To include these standards as part of a project. Require this repository
 as a development dependancy:
 
-```
+```Shell
 composer require --dev thoughtsideas/ti-wpcs
 ```
 
 The fixer and tests can be run from the command line:
 
-```
+```Shell
 ./vendor/bin/phpcbf ./
 ./vendor/bin/phpcs ./
 ./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/ti-wpmd/ruleset.xml
+./vendor/bin/phpcpd ./ --regexps-exclude=#vendor/#,#node_modules/# --progress
+```
+
+Or added to the Composer scripts section:
+
+```JSON
+scripts: {
+  "test-phpcbf": "./vendor/bin/phpcbf ./ --standard=vendor/thoughtsideas/TI-WPCS/ti-wpcs/ruleset.xml",
+  "test-phpcs": "./vendor/bin/phpcs ./ --standard=vendor/thoughtsideas/TI-WPCS/ti-wpcs/ruleset.xml",
+  "test-phpmd": "./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/TI-WPMD/ruleset.xml",
+  "test-phpcpd": "./vendor/bin/phpcpd ./ --regexps-exclude=#vendor/#,#node_modules/# --progress",
+  "test": [
+    "composer run test-phpcbf",
+    "composer run test-phpcs",
+    "composer run test-phpmd",
+    "composer run test-phpcpd"
+  ]
+}
 ```
 
 ### Automatically run tests before every Git commit.
@@ -35,13 +53,13 @@ The fixer and tests can be run from the command line:
 
 Create the pre-commit hook file:
 
-```
+```Shell
 mkdir ./_scripts && touch ./_scripts/pre-commit
 ```
 
 Add the pre-commit hook to our new file:
 
-```
+```Shell
 #!/bin/sh
 #
 # Pre Commit Hook.
@@ -61,12 +79,18 @@ composer run test-phpmd
 # PHPMD Results (bool)
 QA_PHPMD=$?
 
+echo "Running WordPress PHP Copy Paste Detector test"
+composer run test-phpcpd
+# PHPCPD Results (bool)
+QA_PHPCPD=$?
+
 # Apply un-staged changes.
 git stash pop -q
 
 # Get our test QA results.
 [ $QA_PHPCS -ne 0 ] && exit 1
 [ $QA_PHPMD -ne 0 ] && exit 1
+[ $QA_PHPCPD -ne 0 ] && exit 1
 
 # If test pass exit successfully.
 exit 0
@@ -74,7 +98,7 @@ exit 0
 
 Link our new file to our git repository
 
-```
+```Shell
 ln -s ../../_scripts/pre-commit ./.git/hooks/pre-commit
 ```
 
