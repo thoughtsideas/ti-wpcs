@@ -28,6 +28,7 @@ The fixer and tests can be run from the command line:
 ./vendor/bin/phpcs ./
 ./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/ti-wpmd/ruleset.xml
 ./vendor/bin/phpcpd ./ --regexps-exclude=#vendor/#,#node_modules/# --progress
+./vendor/bin/phpmnd ./ --ignore-funcs=round,sleep --exclude=./vendor/ --progress
 ```
 
 Or added to the Composer scripts section:
@@ -39,12 +40,15 @@ scripts: {
   "test-phpmd": "./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/TI-WPMD/ruleset.xml",
   "test-phpcpd": "./vendor/bin/phpcpd ./ --regexps-exclude=#vendor/#,#node_modules/# --progress",
   "test-phpsc": "./vendor/bin/security-checker security:check composer.lock",
+  "test-phpmnd": "./vendor/bin/phpmnd ./ --ignore-funcs=round,sleep --exclude=./vendor/ --progress",
+
   "test": [
     "composer run test-phpcbf",
     "composer run test-phpcs",
     "composer run test-phpmd",
     "composer run test-phpcpd",
-    "composer run test-phpsc"
+    "composer run test-phpsc",
+    "composer run test-phpmnd"
   ]
 }
 ```
