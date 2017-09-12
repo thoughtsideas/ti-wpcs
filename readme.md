@@ -28,6 +28,7 @@ The fixer and tests can be run from the command line:
 ./vendor/bin/phpcs ./
 ./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/ti-wpmd/ruleset.xml
 ./vendor/bin/phpcpd ./ --regexps-exclude=#vendor/#,#node_modules/# --progress
+./vendor/bin/security-checker security:check composer.lock
 ./vendor/bin/phpmnd ./ --ignore-funcs=round,sleep --exclude=./vendor/ --progress
 ```
 
