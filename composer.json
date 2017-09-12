@@ -25,7 +25,8 @@
     "wimg/php-compatibility": "^8.0.0",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.1",
     "sebastian/phpcpd": "^3.0",
-    "sensiolabs/security-checker": "^4.1"
+    "sensiolabs/security-checker": "^4.1",
+    "povils/phpmnd": "^1.1"
   },
   "scripts": {
   }
