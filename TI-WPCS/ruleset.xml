@@ -9,6 +9,13 @@
 	<exclude-pattern>*/node_modules/*</exclude-pattern>
 	<exclude-pattern>*/vendor/*</exclude-pattern>
 
+	<!-- Set default config. Can be overwritten. -->
+	<config name="colors" value="1"/>
+	<config name="show_progress" value="1"/>
+
+	<!-- Improve feedback message -->
+	<arg name="tab-width" value="2"/>
+
 	<!-- Only test PHP files. -->
 	<arg name="extensions" value="php" />
 
