@@ -38,11 +38,13 @@ scripts: {
   "test-phpcs": "./vendor/bin/phpcs ./ --standard=vendor/thoughtsideas/TI-WPCS/ti-wpcs/ruleset.xml",
   "test-phpmd": "./vendor/bin/phpmd ./ text ./vendor/thoughtsideas/ti-wpcs/TI-WPMD/ruleset.xml",
   "test-phpcpd": "./vendor/bin/phpcpd ./ --regexps-exclude=#vendor/#,#node_modules/# --progress",
+  "test-phpsc": "./vendor/bin/security-checker security:check composer.lock",
   "test": [
     "composer run test-phpcbf",
     "composer run test-phpcs",
     "composer run test-phpmd",
-    "composer run test-phpcpd"
+    "composer run test-phpcpd",
+    "composer run test-phpsc"
   ]
 }
 ```
@@ -84,6 +86,11 @@ composer run test-phpcpd
 # PHPCPD Results (bool)
 QA_PHPCPD=$?
 
+echo "Running WordPress PHP Security checker test"
+composer run test-phpsc
+# PHPSC Results (bool)
+QA_PHPSC=$?
+
 # Apply un-staged changes.
 git stash pop -q
 
@@ -91,6 +98,7 @@ git stash pop -q
 [ $QA_PHPCS -ne 0 ] && exit 1
 [ $QA_PHPMD -ne 0 ] && exit 1
 [ $QA_PHPCPD -ne 0 ] && exit 1
+[ $QA_PHPSC -ne 0 ] && exit 1
 
 # If test pass exit successfully.
 exit 0

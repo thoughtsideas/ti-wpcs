@@ -24,7 +24,8 @@
     "wp-coding-standards/wpcs": "^0.13.1",
     "wimg/php-compatibility": "^8.0.0",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.4.1",
-    "sebastian/phpcpd": "^3.0"
+    "sebastian/phpcpd": "^3.0",
+    "sensiolabs/security-checker": "^4.1"
   },
   "scripts": {
   }
