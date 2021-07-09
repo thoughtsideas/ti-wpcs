@@ -1,5 +1,7 @@
 # Thoughts & Ideas WordPress Coding Standards
 
+⚠️ Archived: 2021-07-09 ⚠️
+
 [![license](https://img.shields.io/github/license/thoughtsideas/ti-wpcs.svg)](https://github.com/thoughtsideas/ti-wpcs)  [![GitHub release](https://img.shields.io/github/release/thoughtsideas/ti-wpcs.svg)](https://github.com/thoughtsideas/ti-wpcs)  [![Packagist](https://img.shields.io/packagist/v/thoughtsideas/ti-wpcs.svg)](https://packagist.org/packages/thoughtsideas/ti-wpcs)  [![Packagist](https://img.shields.io/packagist/dt/thoughtsideas/ti-wpcs.svg)](https://packagist.org/packages/thoughtsideas/ti-wpcs)  [![GitHub issues](https://img.shields.io/github/issues/thoughtsideas/ti-wpcs.svg)](https://github.com/thoughtsideas/ti-wpcs)  [![Libraries.io for GitHub](https://img.shields.io/librariesio/github/thoughtsideas/ti-wpcs.svg)](https://github.com/thoughtsideas/ti-wpcs)
 
 Thoughts & Ideas WordPress Coding Standards (TI-WPCS) is a development
